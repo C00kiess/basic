@@ -1,4 +1,4 @@
-# basic 
+# BASIC
 It` s just a simple cmd enchant library;
 
 print()-it just printing like in python;
