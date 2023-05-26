@@ -5,4 +5,5 @@
 #include <thread>
 
 void print(std::string text);
+void typewrite(std::string text);
 void typewrite(std::string text, int speed);
