@@ -28,3 +28,9 @@ int rand(int min, int max)
 
     return randomNumber;
 }
+
+std::string ItoS(int number)
+{
+    std::string strNumber = std::to_string(number);
+    return strNumber;
+}
