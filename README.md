@@ -1,49 +1,47 @@
-# BASIC Library
+# Basic Library
 
-BASIC is a lightweight C++ library that provides basic utilities for console-based applications. It includes functions for printing text, simulating typing effects, generating random numbers, and converting integers to strings.
+## Overview
+The Basic Library is a small collection of utility functions for basic console interactions and random number generation. It provides functionality for printing text, simulating typing, generating random integers, and converting integers to strings.
 
 ## Functions
+1. `void print(std::string text)`
+   - Description: Prints the provided text to the console.
+   - Parameters:
+     - `text`: The text to be printed.
+   - Return Type: `void`
 
-### `void print(std::string text)`
+2. `void typewrite(std::string text, int speed = 69)`
+   - Description: Simulates typing out the provided text to the console at a specified typing speed.
+   - Parameters:
+     - `text`: The text to be typewritten.
+     - `speed` (optional): The typing speed in milliseconds per character. Defaults to 69 milliseconds.
+   - Return Type: `void`
 
-This function prints the provided `text` to the console.
+3. `int rand(int min, int max)`
+   - Description: Generates a random integer within the specified range.
+   - Parameters:
+     - `min`: The minimum value for the random number (inclusive).
+     - `max`: The maximum value for the random number (inclusive).
+   - Return Type: `int`
 
-### `void typewrite(std::string text)`
+4. `std::string ItoS(int number)`
+   - Description: Converts an integer to its corresponding string representation.
+   - Parameters:
+     - `number`: The integer to be converted to a string.
+   - Return Type: `std::string`
 
-This function simulates typing out the provided `text` to the console. It displays each character with a slight delay, creating a typing effect.
-
-### `void typewrite(std::string text, int speed)`
-
-This function simulates typing out the provided `text` to the console at a specified `speed`. The `speed` parameter determines the delay between each character, allowing you to control the typing speed.
-
-### `int rand(int min, int max)`
-
-This function generates a random integer within the specified range. It takes a minimum value `min` and a maximum value `max` and returns a random integer between them, inclusive.
-
-### `std::string ItoS(int number)`
-
-This function converts an integer `number` to its corresponding string representation. It returns the string representation of the provided integer.
-
-## Usage
-
-To use the BASIC library, you can include the necessary header file in your C++ program:
+## Usage Example
 
 ```cpp
-#include <iostream>
 #include "basic.h"
 
 int main() {
-    std::string message = "Hello, world!";
-    print(message);
-    typewrite("This is a typing effect.");
-    typewrite("This will be typed faster.", 50);
-
+    // Example usage of the Basic Library functions
+    print("Hello, world!\n");
+    typewrite("This text will be typed out slowly.\n", 100);
     int randomNum = rand(1, 100);
-    std::cout << "Random Number: " << randomNum << std::endl;
-
-    int number = 42;
-    std::string strNumber = ItoS(number);
-    std::cout << "Integer to String: " << strNumber << std::endl;
+    std::string numString = ItoS(randomNum);
+    print("Generated random number: " + numString + "\n");
 
     return 0;
 }
