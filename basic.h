@@ -6,40 +6,26 @@
 #include <random>
 #include <string>
 
-
-// Prints the provided text to the console.
-void print(std::string text);
-
-// Simulates typing out the provided text to the console at a specified typing speed.
-void typewrite(std::string text, int speed);
-
-// Generates a random integer within the specified range.
-int rand(int min, int max);
-
-// Converts an integer to its corresponding string representation.
-std::string ItoS(int number);
-
-
-void print(std::string text)
+void print(const std::string& text)
 {
-    std::cout << text;
+    std::cout << text << std::endl;
 }
-void typewrite(std::string text, int speed = 69)
+
+void typewrite(const std::string& text, int typespeed = 69)
 {
     for (char c : text) {
         std::cout << c << std::flush;
-        std::this_thread::sleep_for(std::chrono::milliseconds(speed));
+        std::this_thread::sleep_for(std::chrono::milliseconds(typespeed));
     }
 }
+
 int rand(int min, int max)
 {
-    std::random_device rd;
-    std::mt19937 generator(rd());
+    static std::random_device rd;
+    static std::mt19937 generator(rd());
 
     std::uniform_int_distribution<int> distribution(min, max);
-    int randomNumber = distribution(generator);
-
-    return randomNumber;
+    return distribution(generator);
 }
 
 std::string ItoS(int number)
