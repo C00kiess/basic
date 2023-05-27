@@ -1,10 +1,12 @@
 #pragma once
 
 #include <iostream>
+#include <windows.h>
 #include <chrono>
 #include <thread>
 #include <random>
 #include <string>
+#include <ctime>
 
 void print(const std::string& text)
 {
@@ -26,10 +28,4 @@ int rand(int min, int max)
 
     std::uniform_int_distribution<int> distribution(min, max);
     return distribution(generator);
-}
-
-std::string ItoS(int number)
-{
-    std::string strNumber = std::to_string(number);
-    return strNumber;
 }
